@@ -7,7 +7,7 @@ env.read_env()
 
 
 class Config(object):
-    prometheus_api_url = env("PROMETHEUS_API_URL", 'http://localhost:9090')
+    prometheus_api_url = env("PROMETHEUS_API_URL", 'http://158.160.122.18:9090')
     scrape_interval = env.int("SCRAPE_INTERVAL", 60)
     log_level = env.log_level("LOG_LEVEL", logging.INFO)
 

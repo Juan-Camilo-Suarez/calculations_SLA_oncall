@@ -12,7 +12,7 @@ class Config(object):
     log_level = env.log_level("LOG_LEVEL", logging.INFO)
 
     mysql_host = env("MYSQL_HOST", 'localhost')
-    mysql_port = env.int("MYSQL_PORT", '3306')
+    mysql_port = env.int("MYSQL_PORT", '3307')
 
     mysql_user = env("MYSQL_USER", 'root')
     mysql_password = env("MYSQL_PASS", '1234')

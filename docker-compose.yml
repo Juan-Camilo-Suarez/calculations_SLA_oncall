@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  oncall-mysql:
+    hostname: oncall-mysql
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+    networks:
+      - iris
+
+networks:
+  iris:

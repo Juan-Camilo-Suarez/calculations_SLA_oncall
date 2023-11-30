@@ -1,19 +1,22 @@
 services:
-  sla-mysql:
-    hostname: sla-mysql
-    image: mysql:5.7
-    environment:
-      - MYSQL_ROOT_PASSWORD=1234
-    ports:
-      - '3307:3306'
-    networks:
-      - iris
-
   oncall-mysql:
     hostname: oncall-mysql
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=1234
+    networks:
+      - iris
+
+  web_app:
+    image: web_app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - oncall-mysql
+    environment:
+      DATABASE_HOST: oncall-mysql
     networks:
       - iris
 

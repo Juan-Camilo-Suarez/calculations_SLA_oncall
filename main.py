@@ -49,7 +49,7 @@ def main():
         # prober to create team
         value = prom.lastValue('increase(prober_create_team_scenario_success_total[1m])', unixtimestamp, 0)
         value = int(float(value))
-        db.save_indicator(name='prober_create_user_scenario_success_total',
+        db.save_indicator(name='prober_create_team_scenario_success_total',
                           slo=1,
                           value=value,
                           is_bad=value < 1,
@@ -57,7 +57,7 @@ def main():
 
         value = prom.lastValue('increase (prober_create_team_scenario_fail_total[1m])', unixtimestamp, 100)
         value = int(float(value))
-        db.save_indicator(name='prober_create_user_scenario_success_fail_total',
+        db.save_indicator(name='prober_create_team_scenario_success_fail_total',
                           slo=0,
                           value=value,
                           is_bad=value > 0,
@@ -65,7 +65,7 @@ def main():
 
         value = prom.lastValue('prober_create_team_scenario_duration_seconds', unixtimestamp, 2)
         value = float(value)
-        db.save_indicator(name='prober_create_user_scenario_duration_seconds',
+        db.save_indicator(name='prober_create_team_scenario_duration_seconds',
                           slo=0.1,
                           value=value,
                           is_bad=value > 0.1,
@@ -74,7 +74,7 @@ def main():
         # prober add user to user
         value = prom.lastValue('increase(prober_add_user_to_team_scenario_success_total[1m])', unixtimestamp, 0)
         value = int(float(value))
-        db.save_indicator(name='prober_create_user_scenario_success_total',
+        db.save_indicator(name='prober_add_user_to_team_scenario_success_total',
                           slo=1,
                           value=value,
                           is_bad=value < 1,
@@ -82,7 +82,7 @@ def main():
 
         value = prom.lastValue('increase (prober_add_user_to_team_scenario_fail_total[1m])', unixtimestamp, 100)
         value = int(float(value))
-        db.save_indicator(name='prober_create_user_scenario_success_fail_total',
+        db.save_indicator(name='prober_add_user_to_team_scenario_success_fail_total',
                           slo=0,
                           value=value,
                           is_bad=value > 0,
@@ -90,7 +90,7 @@ def main():
 
         value = prom.lastValue('prober_add_user_to_team_scenario_duration_seconds', unixtimestamp, 2)
         value = float(value)
-        db.save_indicator(name='prober_create_user_scenario_duration_seconds',
+        db.save_indicator(name='prober_add_user_to_team_scenario_duration_seconds',
                           slo=0.1,
                           value=value,
                           is_bad=value > 0.1,

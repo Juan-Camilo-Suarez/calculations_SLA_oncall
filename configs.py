@@ -11,7 +11,7 @@ class Config(object):
     scrape_interval = env.int("SCRAPE_INTERVAL", 60)
     log_level = env.log_level("LOG_LEVEL", logging.INFO)
 
-    mysql_host = env("MYSQL_HOST", 'oncall-mysql')
+    mysql_host = env("MYSQL_HOST", 'sla-mysql')
     mysql_port = env.int("MYSQL_PORT", '3306')
 
     mysql_user = env("MYSQL_USER", 'root')
